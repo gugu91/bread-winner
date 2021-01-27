@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{099C7291-7FE4-4AAE-8325-DE8486BB731A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BreadWinner</RootNamespace>
+    <AssemblyName>BreadWinner</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\ConfigOptions.cs" />
+    <Compile Include="Configuration\ConfigHelper.cs" />
+    <Compile Include="Threading\IStartupBarrier.cs" />
+    <Compile Include="Threading\StartupBarrier.cs" />
+    <Compile Include="WorkItems\IWorkBatchFactory.cs" />
+    <Compile Include="WorkItems\IBatchedWorkItemFactory.cs" />
+    <Compile Include="WorkItems\StartupWorkBatch.cs" />
+    <Compile Include="WorkItems\WorkBatchFactory.cs" />
+    <Compile Include="WorkItems\IWorkItemFactory.cs" />
+    <Compile Include="Workers\ScheduledProducer.cs" />
+    <Compile Include="Threading\IThreadWrapper.cs" />
+    <Compile Include="Workers\IWorker.cs" />
+    <Compile Include="Workers\AbstractProducer.cs" />
+    <Compile Include="Workers\IWorkerPool.cs" />
+    <Compile Include="WorkItems\Wrappers\DoWorkWrapper.cs" />
+    <Compile Include="WorkItems\Wrappers\FinalizeBatchWrapper.cs" />
+    <Compile Include="WorkItems\IWorkBatch.cs" />
+    <Compile Include="WorkItems\IWorkItem.cs" />
+    <Compile Include="Workers\Consumer.cs" />
+    <Compile Include="Workers\ScheduledJob.cs" />
+    <Compile Include="WorkItems\WorkBatch.cs" />
+    <Compile Include="Workers\WorkerPool.cs" />
+    <Compile Include="Threading\ThreadWrapper.cs" />
+    <Compile Include="WorkItems\BatchedWorkItem.cs" />
+    <Compile Include="Data\WorkItemResult.cs" />
+    <Compile Include="Data\WorkStatus.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkerPoolBuilder.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

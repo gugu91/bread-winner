@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>BreadWinner</id>
+    <version>1.0.1</version>
+    <title>BreadWinner</title>
+    <authors>Guglielmo Porcellini</authors>
+    <owners>Guglielmo Porcellini</owners>
+    <description>Lightweight implementation of Producer Consumer in C#</description>
+    <language>en-gb</language>
+    <projectUrl>https://github.com/gugu91/bread-winner/</projectUrl>
+    <licenseUrl>https://github.com/gugu91/bread-winner/blob/master/LICENSE.txt</licenseUrl>
+  </metadata>
+  <files>
+    <file src="lib\BreadWinner\bin\release\BreadWinner.*" target="lib\net462\" />
+    <file src="README.md" />
+  </files>
+</package>
